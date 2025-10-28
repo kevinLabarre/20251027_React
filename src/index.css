@@ -13,11 +13,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* a {
+.signature {
+  display: block;
+  color: white;
+  margin-top: 20px;
+}
+
+/*
+a {
   font-weight: 500;
-  color: #646cff;
+  color: #ffffff;
   text-decoration: inherit;
 }
+
+
+
 a:hover {
   color: #535bf2;
 } */

@@ -8,6 +8,8 @@ export const Navbar = () => {
       <Link to="/hook-use-state">Hook useState()</Link>
       <Link to="/liste-avec-map">Parcourir une liste</Link>
       <Link to="/composant-enfant">Passage de données parent/enfant</Link>
+      <Link to="/formulaire">Les formulaires</Link>
+      <Link to="/exercice">Exercice</Link>
     </nav>
   );
 };

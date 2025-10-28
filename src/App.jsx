@@ -5,6 +5,8 @@ import HookUseState from "./pages/HookUseState";
 import { ListWithMap } from "./pages/ListWithMap";
 import { PassageDonneEntreComposant } from "./pages/PassageDonneEntreComposant";
 import { Navbar } from "./components/Navbar/Navbar";
+import { Formulaire } from "./pages/Formulaire";
+import { Exercice } from "./pages/Exercice";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           path="composant-enfant"
           element={<PassageDonneEntreComposant />}
         />
+        <Route path="formulaire" element={<Formulaire />} />
+        <Route path="exercice" element={<Exercice />} />
       </Routes>
     </BrowserRouter>
   );

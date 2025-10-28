@@ -19,6 +19,11 @@ function JsxTheorie() {
 
   return (
     <>
+      {/* Lien pour la signature ! */}
+      <a className="signature" href="https://moncompte.dawan.fr/connexion">
+        Lien pour SIGNATURE
+      </a>
+
       {/* Interpréter du javascript dans du jsx : en utilisant les '{}' */}
       <h1 className="title">Bienvenue sur React</h1>
       <h1>{title}</h1>
