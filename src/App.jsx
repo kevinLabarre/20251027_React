@@ -1,53 +1,31 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import logoReact from "./assets/react.svg";
+import JsxTheorie from "./pages/JsxTheorie";
+import HookUseState from "./pages/HookUseState";
+import { ListWithMap } from "./pages/ListWithMap";
+import { PassageDonneEntreComposant } from "./pages/PassageDonneEntreComposant";
+import { Navbar } from "./components/Navbar/Navbar";
 
 function App() {
-  const title = "Bienvenue sur React";
-
-  const displayTitle = () => {
-    return "Bienvenue sur React";
-  };
-
-  const htmlTitle = <h1>Bienvenue sur React</h1>;
-
-  const welcome = "Bonjour <strong>tout le monde</strong>, et bienvenue";
-
-  const imgHref = "../src/assets/react.svg";
-
-  const styleTitle = { color: "red", fontWeight: 400 };
-
-  const displayText = true;
-
   return (
-    <>
-      {/* Interpréter du javascript dans du jsx : en utilisant les '{}' */}
-      <h1 className="title">Bienvenue sur React</h1>
-      <h1>{title}</h1>
-      <h1>{displayTitle()}</h1>
-      {htmlTitle}
-      <p>Résultat de 2 + 2 = {2 + 2}</p>
+    // Tous les éléments de notre application doivent être placés dans  <BrowserRouter>, sinon
+    // les redirections lancés depuis les composants placés hors du <BrowserRouter> ne fonctionneront pas
 
-      {/* Pour interpréter comme du HTML ce qui est dans les '{}'  */}
-      <p>{welcome}</p>
-      <p dangerouslySetInnerHTML={{ __html: welcome }}></p>
+    <BrowserRouter>
+      {/* Partie statique de l'application (par exemple: notre navbar) */}
 
-      {/* Utilisation du javascript dans les propriétés des balises */}
-      <img src="../src/assets/react.svg" alt="logo react" />
-      <img src={imgHref} alt="logo react" />
-      {/*  // Avec l'import ligne 2 (tout en haut) */}
-      <img src={logoReact} alt="logo react" />
+      <Navbar />
 
-      {/* Pour styliser avec la balise style */}
-      <h1 style={{ color: "red", fontWeight: 400 }}>Bienvenue sur React</h1>
-      <h1 style={styleTitle}>Bienvenue sur React</h1>
-
-      {/* Pour faire de l'affichage conditionnel */}
-      {/* solution 1 : que du vrai (comme un if sans le else)  */}
-      {displayText && <p>Texte affiché</p>}
-
-      {/* solution 2 : on affiche également quelque chose quand la condition des fausse (equivalent d'un if + else)  */}
-      {displayText ? <p>Texte affiché</p> : <p>Texte Masqué</p>}
-    </>
+      <Routes>
+        <Route path="" element={<JsxTheorie />} />
+        <Route path="hook-use-state" element={<HookUseState />} />
+        <Route path="liste-avec-map" element={<ListWithMap />} />
+        <Route
+          path="composant-enfant"
+          element={<PassageDonneEntreComposant />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

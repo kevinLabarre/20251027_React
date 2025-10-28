@@ -1,0 +1,16 @@
+nav {
+  display: flex;
+  background-color: rgb(235, 233, 233);
+  padding: 1rem;
+  width: 100%;
+}
+
+nav a {
+  color: rgb(52, 52, 52);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgb(210, 208, 208);
+}
