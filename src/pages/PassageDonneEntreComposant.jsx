@@ -1,3 +1,5 @@
+import { PassageDonneDeEnfantAParent } from "../components/PassageDonneDeEnfantAParent";
+
 export const PassageDonneEntreComposant = () => {
   // Ici, le composant parent
 
@@ -7,10 +9,7 @@ export const PassageDonneEntreComposant = () => {
 
   return (
     <section>
-      <h1>
-        Appel d'un composant enfant, et passage de données entre composant
-        parent et enfant
-      </h1>
+      <h1>Passage de données de parent à enfant</h1>
       <ComposantEnfant
         data="Texte créé sur le composant parent"
         buttonFct={handleClick}
@@ -24,6 +23,9 @@ export const PassageDonneEntreComposant = () => {
       />
 
       <Title>Mon titre</Title>
+
+      <h1>Passage de données d'enfant à parent</h1>
+      <PassageDonneDeEnfantAParent />
     </section>
   );
 };
@@ -41,5 +43,5 @@ const ComposantEnfant = ({ data, buttonFct, ...props }) => {
 };
 
 const Title = ({ children }) => {
-  return <h1 className="MainTitle">{children}</h1>;
+  return <h2 className="MainTitle">{children}</h2>;
 };

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ProductsList } from "../components/ProductsList";
 
 export const Exercice = () => {
   const products = [
@@ -9,12 +10,19 @@ export const Exercice = () => {
     { category: "Vegetables", price: "$4", number: 0, name: "Carrot" },
     { category: "Vegetables", price: "$1", number: 6, name: "Zucchini" },
   ];
-  const [inStock, setInStock] = useState(false);
 
-  const fruits = products.filter((p) => p.category === "fruits");
+  const [checked, setChecked] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
+
+  const fruits = products.filter((p) => p.category === "Fruits");
+  const vegetables = products.filter((p) => p.category === "Vegetables");
 
   const handleCheck = (e) => {
-    setInStock(e.target.checked);
+    setChecked(e.target.checked);
+  };
+
+  const handleSearch = (e) => {
+    setSearchValue(e.target.value);
   };
 
   return (
@@ -32,33 +40,27 @@ export const Exercice = () => {
       <p>
         3. Faire une barre de recherche qui permettra de filtrer les éléments
       </p>
-      {/* 
-      <input type="checkbox" />
 
-    <ProductList data={fruits} />
-      <ProductList data={vegetables} /> */}
-      <input type="checkbox" onChange={handleCheck} value={inStock} />
+      <input type="checkbox" onChange={handleCheck} checked={checked} />
+      <span>Afficher hors stock</span>
+      <br />
+      <input
+        type="text"
+        placeholder="Rechercher ..."
+        onChange={handleSearch}
+        value={searchValue}
+      />
 
-      <ProductList products={fruits} inStock={inStock} />
-      {/* <ProductList products={vegetable} /> */}
+      <ProductsList
+        products={fruits}
+        afficherHorsStock={checked}
+        recherche={searchValue}
+      />
+      <ProductsList
+        products={vegetables}
+        afficherHorsStock={checked}
+        recherche={searchValue}
+      />
     </>
   );
 };
-
-function ProductList({ products, inStock = true }) {
-  return (
-    <>
-      {products
-        .filter((p) => {
-          if (inStock) {
-            return true;
-          } else {
-            return p.number > 0;
-          }
-        })
-        .map((p) => (
-          <p>{p.name}</p>
-        ))}
-    </>
-  );
-}

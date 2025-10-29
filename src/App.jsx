@@ -7,6 +7,9 @@ import { PassageDonneEntreComposant } from "./pages/PassageDonneEntreComposant";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Formulaire } from "./pages/Formulaire";
 import { Exercice } from "./pages/Exercice";
+import { HookUseEffect } from "./pages/HookUseEffect";
+import { RequeteApi } from "./pages/RequeteApi";
+import { HookPerso } from "./pages/HookPerso";
 
 function App() {
   return (
@@ -28,6 +31,9 @@ function App() {
         />
         <Route path="formulaire" element={<Formulaire />} />
         <Route path="exercice" element={<Exercice />} />
+        <Route path="hook-use-effect" element={<HookUseEffect />} />
+        <Route path="requete-api" element={<RequeteApi />} />
+        <Route path="hook-perso" element={<HookPerso />} />
       </Routes>
     </BrowserRouter>
   );

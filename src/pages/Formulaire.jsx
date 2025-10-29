@@ -34,7 +34,7 @@ export const Formulaire = () => {
       <button onClick={() => setInputValue("")}>Vider le champ</button>
 
       <h2>Exemple 2 :</h2>
-      <input type="checkbox" onChange={handleCheck} value={checked} />
+      <input type="checkbox" onChange={handleCheck} checked={checked} />
 
       {checked ? <p>Case coché</p> : <p>Case non cochée</p>}
       {checked && <p>Elément affiché</p>}

@@ -10,6 +10,9 @@ export const Navbar = () => {
       <Link to="/composant-enfant">Passage de données parent/enfant</Link>
       <Link to="/formulaire">Les formulaires</Link>
       <Link to="/exercice">Exercice</Link>
+      <Link to="/hook-use-effect">hook useEffect</Link>
+      <Link to="/requete-api">Requêtes API</Link>
+      <Link to="/hook-perso">Hook perso.</Link>
     </nav>
   );
 };

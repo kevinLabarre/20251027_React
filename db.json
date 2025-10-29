@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "category": "Fruits",
+      "price": "$2",
+      "number": 0,
+      "name": "Pineapple",
+      "inStock": false,
+      "color": "yellow",
+      "id": "3"
+    }
+  ]
+}
