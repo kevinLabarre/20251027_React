@@ -3,7 +3,7 @@ import { useProducts } from "../hooks/useProducts";
 import { AjouterProduit } from "./AjouterProduit";
 import { useState } from "react";
 
-export const ProductTable = ({ data, deleteFct }) => {
+export const ProductTable = ({ data, deleteFct, addFct }) => {
   const { deleteProduct } = useProducts();
 
   const [displayForm, setDisplayForm] = useState(false);
@@ -56,7 +56,7 @@ export const ProductTable = ({ data, deleteFct }) => {
       </table>
       <button onClick={handleDisplayForm}>Ajouter un nouveau produit</button>
 
-      {displayForm && <AjouterProduit />}
+      {displayForm && <AjouterProduit handleAdd={addFct} />}
     </div>
   );
 };

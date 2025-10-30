@@ -16,6 +16,10 @@ export const RequeteApi = () => {
     setProducts((prev) => prev.filter((p) => deletedProduct_Id !== p.id));
   };
 
+  const handleAddOneProduct = (newProduct) => {
+    setProducts((prev) => [...prev, newProduct]);
+  };
+
   const loadProducts = () => {
     axios
       .get("http://localhost:3001/products")
@@ -34,7 +38,11 @@ export const RequeteApi = () => {
 
       {!errorApi ? (
         products.length > 0 ? (
-          <ProductTable data={products} deleteFct={handleDeleteOneProduct} />
+          <ProductTable
+            data={products}
+            deleteFct={handleDeleteOneProduct}
+            addFct={handleAddOneProduct}
+          />
         ) : (
           <p>Chargement en cours...</p>
         )

@@ -34,6 +34,8 @@ function App() {
         <Route path="hook-use-effect" element={<HookUseEffect />} />
         <Route path="requete-api" element={<RequeteApi />} />
         <Route path="hook-perso" element={<HookPerso />} />
+
+        <Route path="*" element={<h1>page 404</h1>} />
       </Routes>
     </BrowserRouter>
   );

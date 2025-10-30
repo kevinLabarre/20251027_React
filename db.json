@@ -2,12 +2,57 @@
   "products": [
     {
       "category": "Fruits",
+      "price": "$1",
+      "number": 0,
+      "name": "Banana",
+      "inStock": false,
+      "color": "yellow",
+      "id": "1"
+    },
+    {
+      "category": "Fruits",
+      "price": "$1",
+      "number": 2,
+      "name": "Mango",
+      "inStock": true,
+      "color": "orange",
+      "id": "2"
+    },
+    {
+      "category": "Fruits",
       "price": "$2",
       "number": 0,
       "name": "Pineapple",
       "inStock": false,
       "color": "yellow",
       "id": "3"
+    },
+    {
+      "category": "Vegetables",
+      "price": "$2",
+      "number": 4,
+      "name": "Broccoli",
+      "inStock": true,
+      "color": "green",
+      "id": "4"
+    },
+    {
+      "category": "Vegetables",
+      "price": "$4",
+      "number": 0,
+      "name": "Carrot",
+      "inStock": false,
+      "color": "orange",
+      "id": "5"
+    },
+    {
+      "category": "Vegetables",
+      "price": "$1",
+      "number": 6,
+      "name": "Zucchini",
+      "inStock": true,
+      "color": "green",
+      "id": "6"
     }
   ]
 }
